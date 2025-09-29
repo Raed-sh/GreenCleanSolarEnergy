@@ -1,6 +1,8 @@
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Bot, ShoppingCart, Wrench } from "lucide-react";
+import Image from "next/image";
+import config from "../next.config";
 
 export function ServicesSection() {
   const services = [
@@ -94,8 +96,11 @@ export function ServicesSection() {
                     index % 2 === 1 ? "md:col-start-1 md:row-start-1" : ""
                   }`}
                 >
-                  <img
-                    src={service.image || "/placeholder.svg"}
+                  <Image
+                    fill
+                    src={`${config.basePath}${
+                      service.image || "/placeholder.svg"
+                    }`}
                     alt={service.title}
                     className="w-full h-full object-cover"
                   />

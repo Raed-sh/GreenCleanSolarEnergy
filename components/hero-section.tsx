@@ -2,7 +2,8 @@
 
 import { Button } from "@/components/ui/button";
 import { ArrowDown } from "lucide-react";
-
+import Image from "next/image";
+import config from "../next.config";
 export function HeroSection() {
   const scrollToContact = () => {
     document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
@@ -12,8 +13,9 @@ export function HeroSection() {
     <section className="relative flex justify-center items-center h-screen overflow-hidden">
       {/* Background Image/Video */}
       <div className="z-0 absolute inset-0">
-        <img
-          src="/solar-panel-field-with-blue-sky-and-sun-rays.jpg"
+        <Image
+          fill
+          src={`${config.basePath}/solar-panel-field-with-blue-sky-and-sun-rays.jpg`}
           alt="حقل الألواح الشمسية"
           className="w-full h-full object-cover"
         />
